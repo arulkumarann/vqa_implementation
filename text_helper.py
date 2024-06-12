@@ -1,6 +1,6 @@
 import re
 
-SENTENCE_SPLIT_REGEX = re.complie(r'(\W+)')
+SENTENCE_SPLIT_REGEX = re.compile(r'(\W+)')
 
 def tokenize(sentence):
     """ splits the sentence into tokens with regex"""
@@ -12,18 +12,18 @@ def load_str_list(fname):
     """ loads a list of strings from a file"""
     with open(fname) as f:
         lines = f.readlines()
-    lines = [l.strip for l in lines ]
+    lines = [l.strip() for l in lines ]
     return lines
 
 class VocabDict:
     def __init__(self, vocab_file):
         """initializes the vocabdict with a vocabfile"""
-        self.word_list = load_str_list(vocab_files)
+        self.word_list = load_str_list(vocab_file)
         self.word2idx_dict = {w:n_w for n_w, w in enumerate(self.word_list)}
         self.vocab_size= len(self.word_list)
         self.unk2idx = self.word2idx_dict['<unk>'] if '<unk>' in self.word2idx_dict else None
     
-    def idx2word(self, n_W):
+    def idx2word(self, n_w):
         """retrieves a word form its index"""
         return self.word_list[n_w]
 
@@ -43,5 +43,4 @@ class VocabDict:
         """
         inds = [self.word2idx(w) for w in tokenize(sentence)]
         return inds
-    
-    
+
