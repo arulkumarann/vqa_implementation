@@ -36,6 +36,9 @@ datasets\
     ```bash
     python train.py
 
+
+![loss_and_accuracy](./loss_and_accuracy.png)
+
 ## **Acknowledgements**
 
 - COCO Dataset: [http://cocodataset.org/](http://cocodataset.org/)
