@@ -37,7 +37,7 @@ datasets\
     python train.py
 
 
-![loss_and_accuracy](./loss_and_accuracy.png)
+![loss_and_accuracy](./loss_and_acc.png)
 
 ## **Acknowledgements**
 
